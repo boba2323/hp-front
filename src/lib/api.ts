@@ -45,7 +45,12 @@ export const session = {
   },
 }
 
-export const api = axios.create({ baseURL: '/api' })
+// Relative by default so the Vite dev proxy handles it. When the SPA is hosted
+// somewhere other than the API, set VITE_API_URL at build time to the absolute
+// API root, e.g. https://massacre.pythonanywhere.com/api
+export const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || '/api',
+})
 
 api.interceptors.request.use((config) => {
   const token = session.access
