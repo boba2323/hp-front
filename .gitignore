@@ -1,0 +1,17 @@
+# Dependencies and build output
+node_modules/
+dist/
+.vite/
+
+# Env (Vite reads VITE_* from here)
+.env
+.env.*
+!.env.example
+
+# Local overrides
+*.local
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
