@@ -1,0 +1,5 @@
+# SPA fallback. Client-side routes (/appointments, /patients/12, ...) have no
+# file on disk, so a direct hit or a refresh must be served index.html and let
+# react-router resolve it. Honoured by Netlify and Cloudflare Pages; Vercel
+# needs the equivalent rewrite in vercel.json instead.
+/*    /index.html   200
